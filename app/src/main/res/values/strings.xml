@@ -17,7 +17,7 @@
     <string name="number_3">3</string>
     <string name="addition">+</string>
     <string name="number_0">0</string>
-    <string name="comma">,</string>
+    <string name="dot">.</string>
     <string name="equals">=</string>
-    <string name="digit_place">Digit place</string>
+    <string name="digit_place">0</string>
 </resources>

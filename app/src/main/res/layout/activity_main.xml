@@ -7,112 +7,130 @@
     android:columnCount="4">
 
     <TextView
+        android:id="@+id/outputScreen"
         android:layout_width="300dp"
         android:layout_height="150dp"
         android:layout_columnSpan="4"
         android:layout_gravity="fill"
         android:background="@drawable/sky"
-        android:textSize="50sp"
-        android:hint="@string/digit_place"
         android:gravity="right"
+        android:hint="@string/digit_place"
+        android:textSize="50sp"
         tools:ignore="RtlHardcoded" />
 
     <Button
+        android:id="@+id/allClearButton"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill"
+        android:layout_marginEnd="3dp"
         android:text="@string/ac" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="@string/c" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="@string/percent" />
-
-    <Button
+        android:id="@+id/multiplyButton"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="@string/multiplication" />
 
     <Button
+        android:id="@+id/divideButton"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:text="@string/number_7" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="@string/number_8" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="@string/number_9" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_gravity="fill"
         android:text="@string/dividing" />
 
     <Button
+        android:id="@+id/numberSevenButton"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginEnd="3dp"
+        android:text="@string/number_7" />
+
+    <Button
+        android:id="@+id/numberEightButton"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginEnd="3dp"
+        android:text="@string/number_8" />
+
+    <Button
+        android:id="@+id/numberNineButton"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginEnd="3dp"
+        android:text="@string/number_9" />
+
+    <Button
+        android:id="@+id/additionButton"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_rowSpan="2"
+        android:layout_gravity="fill"
+        android:text="@string/addition" />
+
+    <Button
+        android:id="@+id/numberFourButton"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="@string/number_4" />
 
     <Button
+        android:id="@+id/numberFiveButton"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="@string/number_5" />
 
     <Button
+        android:id="@+id/numberSixButton"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="@string/number_6" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="@string/addition" />
 
     <Button
+        android:id="@+id/numberOneButton"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="@string/number_1" />
 
     <Button
+        android:id="@+id/numberTwoButton"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="@string/number_2" />
 
     <Button
+        android:id="@+id/numberThreeButton"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="@string/number_3" />
 
     <Button
+        android:id="@+id/subtractButton"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="@string/subtract" />
 
     <Button
+        android:id="@+id/numberZeroButton"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="@string/number_0" />
 
     <Button
+        android:id="@+id/dotButton"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:text="@string/comma" />
+        android:text="@string/dot" />
 
     <Button
+        android:id="@+id/equalsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/equals"
         android:layout_columnSpan="2"
-        android:layout_gravity="fill"/>
+        android:layout_gravity="fill"
+        android:text="@string/equals" />
 
 
 </GridLayout>
