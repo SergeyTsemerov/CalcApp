@@ -7,4 +7,21 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="ac_btn_color">#DF4141</color>
+    <color name="multiply_btn_color">#6CB615</color>
+    <color name="divide_btn_color">#6CB615</color>
+    <color name="seven_btn_color">#127FD5</color>
+    <color name="eight_btn_color">#127FD5</color>
+    <color name="nine_btn_color">#127FD5</color>
+    <color name="addition_btn_color">#6CB615</color>
+    <color name="four_btn_color">#127FD5</color>
+    <color name="five_btn_color">#127FD5</color>
+    <color name="six_btn_color">#127FD5</color>
+    <color name="one_btn_color">#127FD5</color>
+    <color name="two_btn_color">#127FD5</color>
+    <color name="three_btn_color">#127FD5</color>
+    <color name="subtract_btn_color">#6CB615</color>
+    <color name="zero_btn_color">#127FD5</color>
+    <color name="dot_btn_color">#127FD5</color>
+    <color name="equals_btn_color">#F49B17</color>
 </resources>
