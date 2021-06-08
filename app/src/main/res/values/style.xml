@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="NumberButtonsStyle">
+        <item name="android:fontFamily">@font/exocet_heavy</item>
+        <item name="android:textSize">@dimen/buttons_text_size</item>
+    </style>
+
+    <style name="ACButtonStyle">
+        <item name="android:textSize">@dimen/ac_btn_text_size</item>
+        <item name="android:fontFamily">@font/exocet_heavy</item>
+        <item name="android:backgroundTint">@color/ac_btn_color</item>
+        <item name="cornerRadius">@dimen/ac_btn_corner_radius</item>
+    </style>
+</resources>
