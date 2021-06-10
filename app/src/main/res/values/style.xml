@@ -3,6 +3,8 @@
     <style name="NumberButtonsStyle">
         <item name="android:fontFamily">@font/exocet_heavy</item>
         <item name="android:textSize">@dimen/buttons_text_size</item>
+        <item name="android:layout_width">@dimen/width_value</item>
+        <item name="android:layout_height">@dimen/height_value</item>
     </style>
 
     <style name="ACButtonStyle">
@@ -10,5 +12,10 @@
         <item name="android:fontFamily">@font/exocet_heavy</item>
         <item name="android:backgroundTint">@color/ac_btn_color</item>
         <item name="cornerRadius">@dimen/ac_btn_corner_radius</item>
+    </style>
+
+    <style name="EqualsAndPlusButtonStyle">
+        <item name="android:fontFamily">@font/exocet_heavy</item>
+        <item name="android:textSize">@dimen/buttons_text_size</item>
     </style>
 </resources>

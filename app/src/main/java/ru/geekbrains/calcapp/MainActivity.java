@@ -1,8 +1,13 @@
 package ru.geekbrains.calcapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -21,13 +26,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private final int[] operationButtonIds = new int[]{R.id.multiplyButton, R.id.divideButton, R.id.additionButton, R.id.subtractButton,
             R.id.equalsButton};
 
+    static int theme = R.style.Theme_CalcApp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(theme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         calculation = new Calculation();
         initView();
+    }
+
+    public static void setDefaultTheme(int theme) {
+        MainActivity.theme = theme;
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        recreate();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_item, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            this.startActivity(intent);
+        }
+        return true;
     }
 
     @Override
