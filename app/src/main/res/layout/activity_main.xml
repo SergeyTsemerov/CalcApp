@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/sky">
+    android:background="@drawable/sunset">
 
     <TextView
         android:id="@+id/outputScreen"
         android:layout_width="@dimen/result_view_width"
         android:layout_height="@dimen/result_view_height"
         android:layout_marginTop="@dimen/result_view_margin_top"
-        android:background="@drawable/sky"
+        android:background="@drawable/hokusai"
         android:fontFamily="@font/audiowide"
         android:gravity="end"
         android:hint="@string/digit_place"
+        android:textColor="@color/result_color"
         android:textSize="@dimen/result_view_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
@@ -23,23 +23,22 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/allClearButton"
+        style="@style/ACButtonStyle"
         android:layout_width="@dimen/ac_btn_width"
         android:layout_height="@dimen/ac_btn_height"
         android:layout_marginTop="@dimen/ac_btn_margin_top"
+        android:backgroundTint="@color/ac_btn_color"
         android:text="@string/ac"
-        style="@style/ACButtonStyle"
         app:layout_constraintBottom_toBottomOf="@+id/divideButton"
         app:layout_constraintStart_toStartOf="@+id/outputScreen"
         app:layout_constraintTop_toBottomOf="@+id/outputScreen" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/multiplyButton"
-        android:layout_width="@dimen/multiply_btn_width"
-        android:layout_height="@dimen/multiply_btn_height"
+        style="@style/NumberButtonsStyle"
         android:layout_marginStart="@dimen/multiply_btn_margin_start"
         android:layout_marginTop="@dimen/multiply_btn_margin_top"
         android:backgroundTint="@color/multiply_btn_color"
-        style="@style/NumberButtonsStyle"
         android:text="@string/multiplication"
         app:cornerRadius="@dimen/multiply_btn_corner_radius"
         app:layout_constraintBottom_toBottomOf="@+id/divideButton"
@@ -48,13 +47,11 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/divideButton"
-        android:layout_width="@dimen/divide_btn_width"
-        android:layout_height="@dimen/divide_btn_height"
+        style="@style/NumberButtonsStyle"
         android:layout_marginStart="@dimen/divide_btn_margin_start"
         android:layout_marginTop="@dimen/divide_btn_margin_top"
         android:backgroundTint="@color/divide_btn_color"
         android:text="@string/dividing"
-        style="@style/NumberButtonsStyle"
         app:cornerRadius="@dimen/divide_btn_corner_radius"
         app:layout_constraintEnd_toEndOf="@+id/outputScreen"
         app:layout_constraintStart_toEndOf="@+id/multiplyButton"
@@ -62,45 +59,39 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numberSevenButton"
-        android:layout_width="@dimen/seven_btn_width"
-        android:layout_height="@dimen/seven_btn_height"
+        style="@style/NumberButtonsStyle"
         android:backgroundTint="@color/seven_btn_color"
         android:text="@string/number_7"
-        style="@style/NumberButtonsStyle"
         app:layout_constraintStart_toStartOf="@+id/allClearButton"
         app:layout_constraintTop_toBottomOf="@+id/allClearButton" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numberEightButton"
-        android:layout_width="@dimen/eight_btn_width"
-        android:layout_height="@dimen/eight_btn_height"
+        style="@style/NumberButtonsStyle"
         android:layout_marginStart="@dimen/eight_btn_margin_start"
         android:backgroundTint="@color/eight_btn_color"
         android:text="@string/number_8"
-        style="@style/NumberButtonsStyle"
         app:layout_constraintEnd_toEndOf="@+id/allClearButton"
         app:layout_constraintStart_toEndOf="@+id/numberSevenButton"
         app:layout_constraintTop_toBottomOf="@+id/allClearButton" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numberNineButton"
-        android:layout_width="@dimen/nine_btn_width"
-        android:layout_height="@dimen/nine_btn_height"
+        style="@style/NumberButtonsStyle"
         android:layout_marginStart="@dimen/nine_btn_margin_start"
         android:backgroundTint="@color/nine_btn_color"
         android:text="@string/number_9"
-        style="@style/NumberButtonsStyle"
         app:layout_constraintEnd_toEndOf="@+id/multiplyButton"
         app:layout_constraintStart_toEndOf="@+id/numberEightButton"
         app:layout_constraintTop_toBottomOf="@+id/allClearButton" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/additionButton"
+        style="@style/EqualsAndPlusButtonStyle"
         android:layout_width="@dimen/addition_btn_width"
         android:layout_height="@dimen/addition_btn_height"
         android:backgroundTint="@color/addition_btn_color"
         android:text="@string/addition"
-        style="@style/NumberButtonsStyle"
         app:cornerRadius="@dimen/addition_btn_corner_radius"
         app:layout_constraintBottom_toBottomOf="@+id/numberSixButton"
         app:layout_constraintEnd_toEndOf="@+id/outputScreen"
@@ -109,21 +100,17 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numberFourButton"
-        android:layout_width="@dimen/four_btn_width"
-        android:layout_height="@dimen/four_btn_height"
+        style="@style/NumberButtonsStyle"
         android:backgroundTint="@color/four_btn_color"
         android:text="@string/number_4"
-        style="@style/NumberButtonsStyle"
         app:layout_constraintStart_toStartOf="@+id/numberSevenButton"
         app:layout_constraintTop_toBottomOf="@+id/numberSevenButton" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numberFiveButton"
-        android:layout_width="@dimen/five_btn_width"
-        android:layout_height="@dimen/five_btn_height"
+        style="@style/NumberButtonsStyle"
         android:backgroundTint="@color/five_btn_color"
         android:text="@string/number_5"
-        style="@style/NumberButtonsStyle"
         app:layout_constraintBottom_toBottomOf="@+id/numberFourButton"
         app:layout_constraintEnd_toEndOf="@+id/numberEightButton"
         app:layout_constraintStart_toStartOf="@+id/numberEightButton"
@@ -132,11 +119,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numberSixButton"
-        android:layout_width="@dimen/six_btn_width"
-        android:layout_height="@dimen/six_btn_height"
+        style="@style/NumberButtonsStyle"
         android:backgroundTint="@color/six_btn_color"
         android:text="@string/number_6"
-        style="@style/NumberButtonsStyle"
         app:layout_constraintBottom_toBottomOf="@+id/numberFiveButton"
         app:layout_constraintEnd_toEndOf="@+id/numberNineButton"
         app:layout_constraintStart_toStartOf="@+id/numberNineButton"
@@ -144,22 +129,18 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numberOneButton"
-        android:layout_width="@dimen/one_btn_width"
-        android:layout_height="@dimen/one_btn_height"
+        style="@style/NumberButtonsStyle"
         android:backgroundTint="@color/one_btn_color"
         android:text="@string/number_1"
-        style="@style/NumberButtonsStyle"
         app:layout_constraintEnd_toEndOf="@+id/numberFourButton"
         app:layout_constraintStart_toStartOf="@+id/numberFourButton"
         app:layout_constraintTop_toBottomOf="@+id/numberFourButton" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numberTwoButton"
-        android:layout_width="@dimen/two_btn_width"
-        android:layout_height="@dimen/two_btn_height"
+        style="@style/NumberButtonsStyle"
         android:backgroundTint="@color/two_btn_color"
         android:text="@string/number_2"
-        style="@style/NumberButtonsStyle"
         app:layout_constraintBottom_toBottomOf="@+id/numberOneButton"
         app:layout_constraintEnd_toEndOf="@+id/numberFiveButton"
         app:layout_constraintStart_toStartOf="@+id/numberFiveButton"
@@ -167,11 +148,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numberThreeButton"
-        android:layout_width="@dimen/three_btn_width"
-        android:layout_height="@dimen/three_btn_height"
+        style="@style/NumberButtonsStyle"
         android:backgroundTint="@color/three_btn_color"
         android:text="@string/number_3"
-        style="@style/NumberButtonsStyle"
         app:layout_constraintBottom_toBottomOf="@+id/numberTwoButton"
         app:layout_constraintEnd_toEndOf="@+id/numberSixButton"
         app:layout_constraintStart_toStartOf="@+id/numberSixButton"
@@ -179,11 +158,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/subtractButton"
-        android:layout_width="@dimen/subtract_btn_width"
-        android:layout_height="@dimen/subtract_btn_height"
+        style="@style/NumberButtonsStyle"
         android:backgroundTint="@color/subtract_btn_color"
         android:text="@string/subtract"
-        style="@style/NumberButtonsStyle"
         app:cornerRadius="@dimen/subtract_btn_corner_radius"
         app:layout_constraintBottom_toBottomOf="@+id/numberThreeButton"
         app:layout_constraintEnd_toEndOf="@+id/additionButton"
@@ -192,22 +169,18 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numberZeroButton"
-        android:layout_width="@dimen/zero_btn_width"
-        android:layout_height="@dimen/zero_btn_height"
+        style="@style/NumberButtonsStyle"
         android:backgroundTint="@color/zero_btn_color"
         android:text="@string/number_0"
-        style="@style/NumberButtonsStyle"
         app:layout_constraintEnd_toEndOf="@+id/numberOneButton"
         app:layout_constraintStart_toStartOf="@+id/numberOneButton"
         app:layout_constraintTop_toBottomOf="@+id/numberOneButton" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/dotButton"
-        android:layout_width="@dimen/dot_btn_width"
-        android:layout_height="@dimen/dot_btn_height"
+        style="@style/NumberButtonsStyle"
         android:backgroundTint="@color/dot_btn_color"
         android:text="@string/dot"
-        style="@style/NumberButtonsStyle"
         app:layout_constraintBottom_toBottomOf="@+id/numberZeroButton"
         app:layout_constraintEnd_toEndOf="@+id/numberTwoButton"
         app:layout_constraintStart_toStartOf="@+id/numberTwoButton"
@@ -215,11 +188,11 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/equalsButton"
+        style="@style/EqualsAndPlusButtonStyle"
         android:layout_width="@dimen/equals_btn_width"
         android:layout_height="@dimen/equals_btn_height"
         android:backgroundTint="@color/equals_btn_color"
         android:text="@string/equals"
-        style="@style/NumberButtonsStyle"
         app:cornerRadius="@dimen/equals_btn_corner_radius"
         app:layout_constraintBottom_toBottomOf="@+id/numberZeroButton"
         app:layout_constraintEnd_toEndOf="@+id/subtractButton"
