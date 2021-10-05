@@ -9,24 +9,25 @@ public class Calculation {
     private double firstNumber;
     private double secondNumber;
     private int actionButton;
+    boolean allowDots = true;
 
-    private State state;
+    private AppState appState;
 
     StringBuilder inputElement = new StringBuilder();
 
     public Calculation() {
-        state = State.firstInput;
+        appState = AppState.firstInput;
     }
 
     public void buttonPressed(int id) {
 
-        if (state == State.operationInput) {
-            state = State.secondInput;
+        if (appState == AppState.operationInput) {
+            appState = AppState.secondInput;
             inputElement.setLength(0);
         }
 
-        if (state == State.result) {
-            state = State.firstInput;
+        if (appState == AppState.result) {
+            appState = AppState.firstInput;
             inputElement.setLength(0);
         }
 
@@ -63,36 +64,49 @@ public class Calculation {
             if (id == R.id.numberNineButton)
                 inputElement.append("9");
 
-            if (id == R.id.dotButton) {
-                if (inputElement.length() > 0) {
+            if (id == R.id.dotButton && allowDots) {
+                if (inputElement.length() > 0 && appState == AppState.firstInput) {
+                    inputElement.append(".");
+                } else if (inputElement.length() > 0 && appState == AppState.secondInput) {
                     inputElement.append(".");
                 } else {
                     inputElement.append("0.");
                 }
+                allowDots = false;
             }
         }
     }
 
     public void operationButtonPressed(int id) {
-        if (R.id.equalsButton == id && state == State.secondInput && inputElement.length() > 0) {
+        if (R.id.equalsButton == id && appState == AppState.secondInput && inputElement.length() > 0) {
             secondNumber = Double.parseDouble(inputElement.toString());
-            state = State.result;
+            appState = AppState.result;
             inputElement.setLength(0);
-            if (actionButton == R.id.additionButton)
+
+            if (actionButton == R.id.additionButton) {
+                allowDots = true;
                 inputElement.append(firstNumber + secondNumber);
+            }
 
-            if (actionButton == R.id.subtractButton)
+            if (actionButton == R.id.subtractButton) {
+                allowDots = true;
                 inputElement.append(firstNumber - secondNumber);
+            }
 
-            if (actionButton == R.id.multiplyButton)
+            if (actionButton == R.id.multiplyButton) {
+                allowDots = true;
                 inputElement.append(firstNumber * secondNumber);
+            }
 
-            if (actionButton == R.id.divideButton)
+            if (actionButton == R.id.divideButton) {
+                allowDots = true;
                 inputElement.append(firstNumber / secondNumber);
+            }
 
-        } else if (inputElement.length() > 0 && state == State.firstInput && id != R.id.equalsButton) {
+        } else if (inputElement.length() > 0 && appState == AppState.firstInput && id != R.id.equalsButton) {
+            allowDots = true;
             firstNumber = Double.parseDouble(inputElement.toString());
-            state = State.operationInput;
+            appState = AppState.operationInput;
             actionButton = id;
         }
     }
@@ -100,6 +114,7 @@ public class Calculation {
     public void allClearPressed(TextView textView) {
         inputElement.delete(0, 12);
         textView.setText("");
+        allowDots = true;
     }
 
     public String getText() {

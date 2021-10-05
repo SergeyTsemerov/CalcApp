@@ -22,12 +22,9 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void initThemeButton(View button, int codeStyle) {
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MainActivity.setDefaultTheme(codeStyle);
-                recreate();
-            }
+        button.setOnClickListener(view -> {
+            MainActivity.setDefaultTheme(codeStyle);
+            recreate();
         });
     }
 }

@@ -1,6 +1,6 @@
 package ru.geekbrains.calcapp.domain;
 
-public enum State {
+public enum AppState {
 
     firstInput,
     secondInput,
