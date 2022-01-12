@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CalcApp</string>
+    <string name="app_name">CalculatorApp</string>
     <string name="ac">AC</string>
     <string name="c">C</string>
     <string name="percent">%</string>
@@ -20,8 +20,4 @@
     <string name="dot">.</string>
     <string name="equals">=</string>
     <string name="digit_place">0</string>
-    <string name="settings">Settings</string>
-    <string name="choose_theme">Choose theme</string>
-    <string name="settings_another_style">Another</string>
-    <string name="settings_default_style">Default</string>
 </resources>

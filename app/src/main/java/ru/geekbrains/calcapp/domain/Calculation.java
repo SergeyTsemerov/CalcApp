@@ -2,6 +2,8 @@ package ru.geekbrains.calcapp.domain;
 
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 import ru.geekbrains.calcapp.R;
 
 public class Calculation {
@@ -10,6 +12,7 @@ public class Calculation {
     private double secondNumber;
     private int actionButton;
     boolean allowDots = true;
+    private static final DecimalFormat decimalFormat = new DecimalFormat("0.0000");
 
     private AppState appState;
 
@@ -95,12 +98,12 @@ public class Calculation {
 
             if (actionButton == R.id.multiplyButton) {
                 allowDots = true;
-                inputElement.append(firstNumber * secondNumber);
+                inputElement.append(decimalFormat.format(firstNumber * secondNumber));
             }
 
             if (actionButton == R.id.divideButton) {
                 allowDots = true;
-                inputElement.append(firstNumber / secondNumber);
+                inputElement.append(decimalFormat.format(firstNumber / secondNumber));
             }
 
         } else if (inputElement.length() > 0 && appState == AppState.firstInput && id != R.id.equalsButton) {
