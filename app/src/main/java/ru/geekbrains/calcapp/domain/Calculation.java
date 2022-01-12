@@ -8,11 +8,29 @@ import ru.geekbrains.calcapp.R;
 
 public class Calculation {
 
+    private static final String DECIMAL_FORMAT = "0.0000";
+    private static final int INPUT_LENGTH_ZERO = 0;
+    private static final int MAX_INPUT_LENGTH = 12;
+    private static final String NUMBER_ZERO = "0";
+    private static final String NUMBER_ONE = "1";
+    private static final String NUMBER_TWO = "2";
+    private static final String NUMBER_THREE = "3";
+    private static final String NUMBER_FOUR = "4";
+    private static final String NUMBER_FIVE = "5";
+    private static final String NUMBER_SIX = "6";
+    private static final String NUMBER_SEVEN = "7";
+    private static final String NUMBER_EIGHT = "8";
+    private static final String NUMBER_NINE = "9";
+    private static final String DOT = ".";
+    private static final String ZERO_WITH_DOT = "0.";
+    private static final String EMPTY_STRING = "";
+
+
     private double firstNumber;
     private double secondNumber;
     private int actionButton;
     boolean allowDots = true;
-    private static final DecimalFormat decimalFormat = new DecimalFormat("0.0000");
+    private static final DecimalFormat decimalFormat = new DecimalFormat(DECIMAL_FORMAT);
 
     private AppState appState;
 
@@ -26,54 +44,54 @@ public class Calculation {
 
         if (appState == AppState.operationInput) {
             appState = AppState.secondInput;
-            inputElement.setLength(0);
+            inputElement.setLength(INPUT_LENGTH_ZERO);
         }
 
         if (appState == AppState.result) {
             appState = AppState.firstInput;
-            inputElement.setLength(0);
+            inputElement.setLength(INPUT_LENGTH_ZERO);
         }
 
-        if (inputElement.length() < 12) {
+        if (inputElement.length() < MAX_INPUT_LENGTH) {
             if (id == R.id.numberZeroButton) {
-                if (inputElement.length() != 0) {
-                    inputElement.append("0");
+                if (inputElement.length() != INPUT_LENGTH_ZERO) {
+                    inputElement.append(NUMBER_ZERO);
                 }
             }
             if (id == R.id.numberOneButton)
-                inputElement.append("1");
+                inputElement.append(NUMBER_ONE);
 
             if (id == R.id.numberTwoButton)
-                inputElement.append("2");
+                inputElement.append(NUMBER_TWO);
 
             if (id == R.id.numberThreeButton)
-                inputElement.append("3");
+                inputElement.append(NUMBER_THREE);
 
             if (id == R.id.numberFourButton)
-                inputElement.append("4");
+                inputElement.append(NUMBER_FOUR);
 
             if (id == R.id.numberFiveButton)
-                inputElement.append("5");
+                inputElement.append(NUMBER_FIVE);
 
             if (id == R.id.numberSixButton)
-                inputElement.append("6");
+                inputElement.append(NUMBER_SIX);
 
             if (id == R.id.numberSevenButton)
-                inputElement.append("7");
+                inputElement.append(NUMBER_SEVEN);
 
             if (id == R.id.numberEightButton)
-                inputElement.append("8");
+                inputElement.append(NUMBER_EIGHT);
 
             if (id == R.id.numberNineButton)
-                inputElement.append("9");
+                inputElement.append(NUMBER_NINE);
 
             if (id == R.id.dotButton && allowDots) {
-                if (inputElement.length() > 0 && appState == AppState.firstInput) {
-                    inputElement.append(".");
+                if (inputElement.length() > INPUT_LENGTH_ZERO && appState == AppState.firstInput) {
+                    inputElement.append(DOT);
                 } else if (inputElement.length() > 0 && appState == AppState.secondInput) {
-                    inputElement.append(".");
+                    inputElement.append(DOT);
                 } else {
-                    inputElement.append("0.");
+                    inputElement.append(ZERO_WITH_DOT);
                 }
                 allowDots = false;
             }
@@ -84,16 +102,16 @@ public class Calculation {
         if (R.id.equalsButton == id && appState == AppState.secondInput && inputElement.length() > 0) {
             secondNumber = Double.parseDouble(inputElement.toString());
             appState = AppState.result;
-            inputElement.setLength(0);
+            inputElement.setLength(INPUT_LENGTH_ZERO);
 
             if (actionButton == R.id.additionButton) {
                 allowDots = true;
-                inputElement.append(firstNumber + secondNumber);
+                inputElement.append(decimalFormat.format(firstNumber + secondNumber));
             }
 
             if (actionButton == R.id.subtractButton) {
                 allowDots = true;
-                inputElement.append(firstNumber - secondNumber);
+                inputElement.append(decimalFormat.format(firstNumber - secondNumber));
             }
 
             if (actionButton == R.id.multiplyButton) {
@@ -106,7 +124,7 @@ public class Calculation {
                 inputElement.append(decimalFormat.format(firstNumber / secondNumber));
             }
 
-        } else if (inputElement.length() > 0 && appState == AppState.firstInput && id != R.id.equalsButton) {
+        } else if (inputElement.length() > INPUT_LENGTH_ZERO && appState == AppState.firstInput && id != R.id.equalsButton) {
             allowDots = true;
             firstNumber = Double.parseDouble(inputElement.toString());
             appState = AppState.operationInput;
@@ -115,8 +133,8 @@ public class Calculation {
     }
 
     public void allClearPressed(TextView textView) {
-        inputElement.delete(0, 12);
-        textView.setText("");
+        inputElement.delete(INPUT_LENGTH_ZERO, MAX_INPUT_LENGTH);
+        textView.setText(EMPTY_STRING);
         allowDots = true;
     }
 
